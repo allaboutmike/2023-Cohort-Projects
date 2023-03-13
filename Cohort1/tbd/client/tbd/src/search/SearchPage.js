@@ -1,7 +1,14 @@
+import './index.css'; 
+import '.search.css';
+
 export default function SearchPage() {
 	return (
-		<div>
-			Search Page <br/> TODO Build this page
-		</div>
+		 <div id="search-bg">
+                    <h1>Super Cook</h1>
+                 <p>
+                    You can make 764 Recipes
+                </p>
+             <input type="text" placeholder="Recipe Search..."></input>
+            </div>
 	);
 }
