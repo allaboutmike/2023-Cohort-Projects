@@ -1,7 +1,6 @@
 const express = require('express');
 const Recipe = require('../models/recipes');
 const { URLSearchParams } = require('url');
-const { URLSearchParams } = require('url');
 
 const router = express.Router();
 
@@ -34,11 +33,7 @@ router.get("/", async (req, res) => {
             res.json({ err });
         }
     }
-        } catch (err) {
-            res.json({ err });
-        }
-    }
-})
+    })
 
 
 module.exports = router;
