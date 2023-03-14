@@ -1,18 +1,45 @@
 const express = require('express');
 const Recipe = require('../models/recipes');
+const { URLSearchParams } = require('url');
 
 const router = express.Router();
 
 //Index (GET all)
 router.get("/", async (req, res) => {
-    try {
-        const recipes = await Recipe.find({});
-        // console.log('search terms are: ' + req.query.q);
-        // console.log(typeof(req.query.q))
-        res.json(recipes);
+    // console.log(`path: ${req.protocol}://${req.hostname}${req.originalUrl}`);
+    let url = new URL(req.protocol + '://' + req.hostname + req.originalUrl);
+    // console.log(url)
+    // console.log('url searchparams')
+    let params = new URLSearchParams(url.search)
+    // console.log(params)
+    // console.log('ingredients')
+    let searchIngredients = params.getAll('ingredient');
+    // console.log(searchIngredients)
 
-    } catch (err) {
-        res.json({ err });
+    if (searchIngredients.length === 0) {
+        try {
+            const recipes = await Recipe.find({});
+            res.json(recipes);
+
+        } catch (err) {
+            res.json({ err });
+        }
+    }
+    else {
+        // console.log('in search')
+
+        // for multiple ingredients, iterate through array of searchIngredients
+        // after try/catch, if there are recipes, compare to saved recipes and only save the ones in both
+        // for partial matching, a more complex data structure would be needed
+        try {
+            const recipes = await Recipe.find({
+                "ingredientsList.ingredientName": searchIngredients[0]
+            });
+            res.json(recipes);
+
+        } catch (err) {
+            res.json({ err });
+        }
     }
 })
 
