@@ -23,22 +23,18 @@ router.get('/', async (req, res) => {
     // only save the ones in both for partial matching, a more complex data
     // structure would be needed
 
-        try {
-          recipes = await Recipe.find({
-            'ingredientsList.ingredientName': { $all: searchIngredients},
-          });
-                console.log('in try');
-                console.log(recipes);
-                if (recipes.length === 0) {
-                    res.send('no recipes were found')
-                } else {
-              res.json(recipes);
-                }
-    
-        } catch (err) {
-          res.json({ err });
-        }
-
+    try {
+      const recipes = await Recipe.find({
+        'ingredientsList.ingredientName': { $all: searchIngredients },
+      });
+      if (recipes.length === 0) {
+        res.send('no recipes were found');
+      } else {
+        res.json(recipes);
+      }
+    } catch (err) {
+      res.json({ err });
+    }
   }
 });
 
