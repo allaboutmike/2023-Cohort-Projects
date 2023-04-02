@@ -1,0 +1,41 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #2f7e7e;
+}
+
+ul {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+
+ol {
+    margin: 0 15px 0 15px;
+    padding: 10px;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.25em;
+}
+
+#sample-image {
+    max-height: 25vh;
+}
+
+#ingredients-container {
+    display: flex;
+    max-width: 90vw;
+    justify-content: space-around;
+}
+
+.list-container {
+    background-color: rgb(201, 212, 223);
+    border: solid 5pt rgb(182, 193, 203);
+}
+
+#other {
+    display: flex;
+    justify-content: space-around;
+    max-width: 90vw;
+}
