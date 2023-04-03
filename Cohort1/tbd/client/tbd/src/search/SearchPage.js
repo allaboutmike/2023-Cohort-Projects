@@ -1,24 +1,19 @@
 import './search.css';
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 
 export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState('');
-   const api = axios.create({
-    baseURL: 'http://localhost:3001/api/',
-    
-  });
 
   function handleSubmit(event) {
     event.preventDefault();
-    
     search(searchQuery);
   }
 
   function search(query) {
     api.get(`recipes?ingredient=${query}`)
       .then(response => {
-        
+
         console.log(response.data);
       })
       .catch(error => {

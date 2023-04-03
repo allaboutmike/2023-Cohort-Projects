@@ -1,20 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api";
 import "./recipe.css";
 
 // api call to get the recipe with the given id
 const getRecipe = async (requesturl, setRecipe) => {
-	const recipes = await axios.get(requesturl);
+	const recipes = await api.get(requesturl);
 	setRecipe(recipes.data);
 }
 
 
 export default function RecipePage() {
 	const { id } = useParams();
-	const baseurl = 'https://2023-cohort-projects-production.up.railway.app/';
-	const apiurl = 'api/recipes/';
-	const requesturl = baseurl + apiurl + id;
+	const apiurl = 'recipes/';
+	const requesturl = apiurl + id;
 	const [recipe, setRecipe] = useState({});
 
 
