@@ -3,6 +3,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./recipe.css";
 
+	// api call to get the recipe with the given id
+	const getRecipe = async (requesturl, setRecipe) => {
+		const recipes = await axios.get(requesturl);
+
+		setRecipe(recipes.data[0]);
+		// 		setRecipe(recipes);
+		// when /:id endpoint is done, update as there will be only one recipe in recipes
+	}
+
+
 export default function RecipePage() {
 	const { id } = useParams();
 	// const baseurl = 'https://2023-cohort-projects-production.up.railway.app/';
@@ -14,21 +24,10 @@ export default function RecipePage() {
 	const [recipe, setRecipe] = useState({});
 
 
-	// api call to get the recipe with the given id
-	const getRecipe = async () => {
-		const recipes = await axios.get(requesturl);
-
-		setRecipe(recipes.data[0]);
-		// 		setRecipe(recipes);
-		// when /:id endpoint is done, update as there will be only one recipe in recipes
-	}
 
 	useEffect(() => {
-		getRecipe();
-		console.log('in useeffect')
-		console.log('recipe is')
-		console.log(recipe)
-	}, []);
+		getRecipe(requesturl, setRecipe);
+	}, [requesturl]);
 
 	// if there is a recipe then loaded()
 	const loaded = () => {
