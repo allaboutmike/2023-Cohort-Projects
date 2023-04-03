@@ -14,7 +14,7 @@ import "./recipe.css";
 
 
 export default function RecipePage() {
-	const { id } = useParams();
+	// const { id } = useParams();
 	// const baseurl = 'https://2023-cohort-projects-production.up.railway.app/';
 	const baseurl = 'http://localhost:8000';
 	const apiurl = '/api/recipes/';
