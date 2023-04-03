@@ -1,11 +1,11 @@
 // import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../api";
 import "./recipe.css";
 
 	// api call to get the recipe with the given id
 	const getRecipe = async (requesturl, setRecipe) => {
-		const recipes = await axios.get(requesturl);
+		const recipes = await api.get(requesturl);
 
 		setRecipe(recipes.data[0]);
 		// 		setRecipe(recipes);
@@ -14,16 +14,8 @@ import "./recipe.css";
 
 
 export default function RecipePage() {
-	// const { id } = useParams();
-	// const baseurl = 'https://2023-cohort-projects-production.up.railway.app/';
-	const baseurl = 'http://localhost:8000';
-	const apiurl = '/api/recipes/';
-	// const requesturl = baseurl + apiurl + id;
-	// for testing until /:id endpoint is implemented
-	const requesturl = baseurl + apiurl;
+	const requesturl = 'recipes/';
 	const [recipe, setRecipe] = useState({});
-
-
 
 	useEffect(() => {
 		getRecipe(requesturl, setRecipe);
