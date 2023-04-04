@@ -57,3 +57,10 @@ input {
 .btn-recipe-search:hover {
     background: #f0e0e0;
 }
+
+.search-result {
+	color: white;
+	font-weight: bold;
+	padding-top: 8px;
+	font-size: 24px;
+}

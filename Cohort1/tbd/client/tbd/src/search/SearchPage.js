@@ -1,9 +1,11 @@
 import './search.css';
 import React, { useState } from 'react';
 import api from '../api';
+import SearchResult from './SearchResult';
 
 export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState('');
+	const [results, setResults] = useState([]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -13,7 +15,7 @@ export default function SearchPage() {
   function search(query) {
     api.get(`recipes?ingredient=${query}`)
       .then(response => {
-
+				setResults(response.data ?? []);
         console.log(response.data);
       })
       .catch(error => {
@@ -22,7 +24,8 @@ export default function SearchPage() {
   }
 
  return (
-    <div id="search-bg">
+    <>
+		<div id="search-bg">
       <h1>Super Cook</h1>
       <p>You can make 764 Recipes</p>
       <form action="GET" onSubmit={handleSubmit}>
@@ -32,5 +35,7 @@ export default function SearchPage() {
         </button>
       </form>
     </div>
+		{ results.map((recipe) => { console.log(recipe); return (<SearchResult recipe={recipe} key={recipe._id}></SearchResult> ); }) }
+		</>
   );
 }

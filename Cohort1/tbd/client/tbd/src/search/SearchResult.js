@@ -1,7 +1,9 @@
-export default function SearchResult(recipe) {
+export default function SearchResult(props) {
+	const recipe = props.recipe;
 	const recipeUrl = 'recipe/' + recipe._id;
+	console.log(recipe);
 	return (
-		<div class="search_result">
+		<div className="search-result" key={recipe._id}>
 			<a href={recipeUrl}>{recipe.title}</a>
 		</div>
 	);
