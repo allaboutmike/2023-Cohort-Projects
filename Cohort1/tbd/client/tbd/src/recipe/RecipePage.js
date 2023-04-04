@@ -9,13 +9,11 @@ const getRecipe = async (requesturl, setRecipe) => {
 	setRecipe(recipes.data);
 }
 
-
 export default function RecipePage() {
 	const { id } = useParams();
 	const apiurl = 'recipes/';
 	const requesturl = apiurl + id;
 	const [recipe, setRecipe] = useState({});
-
 
 	useEffect(() => {
 		getRecipe(requesturl, setRecipe);
