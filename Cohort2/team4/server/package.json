@@ -26,7 +26,9 @@
     "helmet": "^7.0.0",
     "morgan": "^1.10.0",
     "mysql2": "^3.5.1",
+    "reflect-metadata": "^0.1.13",
     "sequelize": "^6.32.1",
+    "sequelize-typescript": "^2.1.5",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -36,6 +38,7 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^20.4.2",
     "@types/supertest": "^2.0.12",
+    "@types/validator": "^13.7.17",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.42.0",

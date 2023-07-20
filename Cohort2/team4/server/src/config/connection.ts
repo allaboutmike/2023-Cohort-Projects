@@ -9,14 +9,14 @@ const sequelize = new Sequelize(
     host: 'aws.connect.psdb.cloud',
     dialect: 'mysql',
     dialectOptions: {
-        ssl: {
-          require: true,
-          // Set the SSL certificate options as needed
-          rejectUnauthorized: false, // Set this to false if you're using a self-signed certificate
-        },
-    port: 3306
-        }
-    }
+      ssl: {
+        require: true,
+        // Set the SSL certificate options as needed
+        rejectUnauthorized: false, // Set this to false if you're using a self-signed certificate
+      },
+      port: 3306,
+    },
+  },
 );
 
 module.exports = sequelize;
