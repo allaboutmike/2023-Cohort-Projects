@@ -30,6 +30,7 @@
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.32.1",
     "sequelize-typescript": "^2.1.5",
+    "superjson": "^1.13.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {

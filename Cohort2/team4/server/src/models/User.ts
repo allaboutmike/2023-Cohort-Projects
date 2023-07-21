@@ -1,7 +1,7 @@
 import { Table, Column, PrimaryKey, Model, Unique, AutoIncrement, DataType, AllowNull } from 'sequelize-typescript';
 
-@Table({ tableName: 'user' })
-class User extends Model {
+@Table({ tableName: 'users' })
+class Users extends Model {
     @PrimaryKey
     @AutoIncrement
     @Column(DataType.INTEGER)
@@ -26,4 +26,4 @@ class User extends Model {
     
 }
 
-export default User;
+export default Users;

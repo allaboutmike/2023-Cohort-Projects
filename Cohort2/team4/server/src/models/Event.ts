@@ -1,7 +1,7 @@
 import { Table, Column, PrimaryKey, Model, AutoIncrement, DataType, AllowNull } from 'sequelize-typescript';
 
-@Table({ tableName: 'event' })
-class Event extends Model {
+@Table({ tableName: 'events' })
+class Events extends Model {
     @PrimaryKey
     @AutoIncrement
     @Column(DataType.INTEGER)
@@ -48,4 +48,4 @@ class Event extends Model {
     host!: number | null;
 }
 
-export default Event;
+export default Events;

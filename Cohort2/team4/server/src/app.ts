@@ -5,7 +5,6 @@ import cors from 'cors';
 const sequelize = require('./config/connection');
 
 import * as middlewares from './middlewares';
-import api from './api';
 import MessageResponse from './interfaces/MessageResponse';
 
 require('dotenv').config();
@@ -23,7 +22,6 @@ app.get<{}, MessageResponse>('/', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
