@@ -22,6 +22,27 @@ app.get<{}, MessageResponse>('/', (req, res) => {
   });
 });
 
+//TRPC INIT TESTING
+
+import { inferAsyncReturnType, initTRPC } from '@trpc/server';
+import * as trpcExpress from '@trpc/server/adapters/express';
+import { appRouter } from './routers/_app';
+
+// created for each request
+const createContext = ({
+  req,
+  res,
+}: trpcExpress.CreateExpressContextOptions) => ({}); // no context
+type Context = inferAsyncReturnType<typeof createContext>;
+
+app.use(
+  '/trpc',
+  trpcExpress.createExpressMiddleware({
+    router: appRouter,
+    createContext,
+  }),
+);
+
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
