@@ -2,7 +2,7 @@ import { router, publicProcedure } from '../trpc';
 // import { Sequelize } from 'sequelize-typescript';
 // import Users from '../models/User';
 import { z } from 'zod';
-import { randomUUID } from "crypto";
+import { randomUUID } from 'crypto';
 
 
 type User = {
@@ -14,8 +14,8 @@ type User = {
 };
 
 const USERS: User[] = [
-  { user_id: "1", email: "kyle@test.com", first_name: "Kyle", last_name: "Flob", auth_key:"test1"},
-  { user_id: "2", email: "julie@test.com", first_name: "Julie", last_name: "Bob", auth_key: "test2" },
+  { user_id: '1', email: 'kyle@test.com', first_name: 'Kyle', last_name: 'Flob', auth_key:'test1' },
+  { user_id: '2', email: 'julie@test.com', first_name: 'Julie', last_name: 'Bob', auth_key: 'test2' },
 ];
 
 export const userRouter = router({
@@ -31,9 +31,9 @@ export const userRouter = router({
   create: publicProcedure
     .input(z.object({ email: z.string(), first_name: z.string(), last_name:z.string(), auth_key:z.string() }))
     .mutation(req => {
-      const { email, first_name, last_name } = req.input
-      const user: User = { user_id: randomUUID(), email, first_name, last_name, auth_key:"testkey"}
-      USERS.push(user)
+      const { email, first_name, last_name } = req.input;
+      const user: User = { user_id: randomUUID(), email, first_name, last_name, auth_key:'testkey' };
+      USERS.push(user);
       return user;
     }),
 });

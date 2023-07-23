@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { userRouter } from './user';
 
 const appRouter = router({
-user: userRouter, // put procedures under "user" namespace
+  user: userRouter, // put procedures under "user" namespace
 });
 
 // You can then access the merged route with
