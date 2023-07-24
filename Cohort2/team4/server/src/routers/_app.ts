@@ -1,9 +1,9 @@
-import { router } from '../trpc';
+import { router } from '../trpc.js';
 import { z } from 'zod';
 
-import { userRouter } from './user';
+import { userRouter } from './user.js';
 
-const appRouter = router({
+export const appRouter = router({
   user: userRouter, // put procedures under "user" namespace
 });
 
