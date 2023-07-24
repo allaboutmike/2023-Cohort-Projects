@@ -1,4 +1,4 @@
-import { router, publicProcedure } from '../trpc';
+import { router, publicProcedure } from '../trpc.js';
 // import { Sequelize } from 'sequelize-typescript';
 // import Users from '../models/User';
 import { z } from 'zod';

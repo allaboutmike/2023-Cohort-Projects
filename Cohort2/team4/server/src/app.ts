@@ -1,14 +1,18 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
-const sequelize = require('./config/connection');
 
-import * as middlewares from './middlewares';
-import MessageResponse from './interfaces/MessageResponse';
+import { inferAsyncReturnType } from '@trpc/server';
+import * as trpcExpress from '@trpc/server/adapters/express';
 
-require('dotenv').config();
+import { appRouter } from './routers/_app.js';
+import sequelize from './config/connection.js';
+import * as middlewares from './middlewares.js';
+import MessageResponse from './interfaces/MessageResponse.js';
 
+dotenv.config();
 const app = express();
 
 app.use(morgan('dev'));
@@ -21,12 +25,6 @@ app.get<{}, MessageResponse>('/', (req, res) => {
     message: 'Hello World!',
   });
 });
-
-//TRPC INIT TESTING
-
-import { inferAsyncReturnType } from '@trpc/server';
-import * as trpcExpress from '@trpc/server/adapters/express';
-import { appRouter } from './routers/_app';
 
 // created for each request
 const createContext = ({
@@ -42,7 +40,6 @@ app.use(
     createContext,
   }),
 );
-
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
