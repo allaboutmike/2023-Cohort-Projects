@@ -5,9 +5,11 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<div>
-				<h1>TODO -- Replace with landing page</h1>
+        <img src="/src/images/convi-logo-1.png" alt="Convi Logo"/>
+				<h1>CONVI</h1>
+        <p>Your Gateway to Unforgettable Events!</p>
 				<Link href="events">Events Dashboard</Link>
 			</div>
     </main>
   )
-}
+};
