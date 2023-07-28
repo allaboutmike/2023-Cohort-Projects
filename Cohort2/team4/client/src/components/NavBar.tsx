@@ -1,9 +1,12 @@
 
 import logo from "../images/ConviLogo.png"
 
+
+
+
 const NavBar = () => {
     return(
-        <div>
+        <div className="mb-6">
             <nav className="flex items-center justify-between flex-wrap">
                 <div className="flex items-center flex-shrink-0 text-white mr-8">
                     <img src={logo.src} alt="ConviLogo" className="transform scale-150 h-16 "/>

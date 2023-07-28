@@ -1,6 +1,6 @@
-import { router, publicProcedure } from '../trpc';
+import { router, publicProcedure } from '../trpc.js';
 import { Sequelize } from 'sequelize-typescript';
-import Events from '../models/Event';
+import Events from '../models/Event.js';
 import { z } from 'zod';
 import { randomUUID } from 'crypto';
 

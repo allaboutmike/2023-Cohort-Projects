@@ -2,6 +2,10 @@ import { Table, Column, PrimaryKey, Model, AutoIncrement, DataType, AllowNull } 
 
 @Table({ tableName: 'events', timestamps: false })
 class Events extends Model {
+  static Events(): { name: String; short_description: String; long_description: String; city: String; state: String; country: String; address: String; start_time: Date; end_time: Date; host: number; } {
+    throw new Error('Method not implemented.');
+  }
+
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.INTEGER)

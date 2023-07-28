@@ -1,5 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import dotenv from 'dotenv';
+import Users from '../models/User.js';
+import Events from '../models/Event.js';
 
 dotenv.config();
 
@@ -18,6 +20,7 @@ const sequelize = new Sequelize(
       },
       port: 3306,
     },
+    models: [Users, Events]
   },
 );
 
