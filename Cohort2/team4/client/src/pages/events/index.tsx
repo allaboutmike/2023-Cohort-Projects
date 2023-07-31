@@ -15,24 +15,12 @@ export default function EventDashboard() {
           <div className="grid grid-cols-2 justify-between">
             <form action="" className="flex flex-col space-y-4">
             <a href="#"className="bg-[#f8fafc] w-96 border rounded-md"><EventList events={events} /></a>
-              <a href="#" className="bg-[#f8fafc] w-96 border rounded-md">
-                event2
-              </a>
-              <a href="#" className="bg-[#f8fafc] w-96 border rounded-md">
-                event3
-              </a>
-              <a href="#" className="bg-[#f8fafc] w-96 border rounded-md">
-                event4
-              </a>
-              <a href="#" className="bg-[#f8fafc] w-96 border rounded-md">
-                event5
-              </a>
             </form>
             <form action="" className="flex flex-col space-y-4">
               <a href="#" className="bg-[#f8fafc] w-80 border rounded-md">
                 3 Days Remaining
               </a>
-              <a href="#" className="bg-[#f8fafc] w-80 border rounded-md">
+              {/* <a href="#" className="bg-[#f8fafc] w-80 border rounded-md">
                 10 Days Remaining
               </a>
               <a href="#" className="bg-[#f8fafc] w-80 border rounded-md">
@@ -43,7 +31,7 @@ export default function EventDashboard() {
               </a>
               <a href="#" className="bg-[#f8fafc] w-80 border rounded-md">
                 33 Days Remaining
-              </a>
+              </a> */}
             </form>
           </div>
             <button className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-400 mt-10">
