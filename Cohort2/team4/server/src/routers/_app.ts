@@ -6,7 +6,7 @@ import { eventRouter } from './event.js';
 
 export const appRouter = router({
   user: userRouter, // put procedures under "user" namespace
-  event: eventRouter
+  event: eventRouter,
 });
 
 // You can then access the merged route with
