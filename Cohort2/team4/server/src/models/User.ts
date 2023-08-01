@@ -5,24 +5,24 @@ class Users extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.INTEGER)
-    user_id!: number;
+  declare user_id: number;
     
   @AllowNull(false)
   @Unique
   @Column(DataType.STRING(30))
-    email!: string;
+  declare email: string;
 
   @AllowNull(false)
   @Column(DataType.STRING(30))
-    first_name!: string;
+  declare first_name: string;
 
   @AllowNull(false)
   @Column(DataType.STRING(30))
-    last_name!: string;
+  declare last_name: string;
 
   @AllowNull(false)
   @Column(DataType.STRING(255))
-    auth_key!: string;
+  declare auth_key: string;
 }
 
 export default Users;
