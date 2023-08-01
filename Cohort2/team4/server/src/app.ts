@@ -11,7 +11,6 @@ import { appRouter } from './routers/_app.js';
 import sequelize from './config/connection.js';
 import * as middlewares from './middlewares.js';
 import MessageResponse from './interfaces/MessageResponse.js';
-import Events from './models/Event.js';
 
 dotenv.config();
 const app = express();
@@ -55,7 +54,5 @@ const testConnection = async () => {
 };
 
 testConnection();
-
-
 
 export default app;
