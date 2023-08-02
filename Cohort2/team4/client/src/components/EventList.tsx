@@ -78,7 +78,7 @@ export default function EventList(props: { events: Array<string> }) {
 		  <ul>
 			{events.map((event, index) => (
 			  <li key={index} className="p-2 border rounded-md">
-				<div className=" ">{event.name}</div>
+				<div className="">{event.name}</div>
 			  </li>
 			))}
 		  </ul>
