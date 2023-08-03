@@ -8,8 +8,6 @@ import Link from "next/link";
 
 const NavBar = () => {
     const {user, isLoading, error} = useUser()
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
 
     return(
         <div className="mb-6">

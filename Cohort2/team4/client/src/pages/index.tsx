@@ -5,6 +5,8 @@ import Link from 'next/link'
 import hero from '../images/landinghero.jpg'
 import { type } from 'os'
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { trpc } from '../../utils/trpc';
+
 
 
 
@@ -13,8 +15,22 @@ export default function Home() {
   //User information.
   const { user, error, isLoading } = useUser();
 
+
+  const allEvents = async () => {
+   try {
+    const response = trpc.event.byId.useQuery({input: 1});
+    console.log(response.data);
+ 
+   } catch (error) {
+    console.error("Big oops. Try again." + error)
+   }
+  }
+  
+
+  allEvents();
+
   return (
-    <main style={{height:'100dvh'}}>
+    <main className="min-h-screen">
       <div className='grid grid-cols-2 gap-12 my-0 mx-auto w-3/5 h-2/3' >
         <div className='col-span-1 flex flex-col justify-center items-start'>
           <h1 className='mb-8 font-bold text-3xl'>Your VIP Pass to Event Awesomeness!</h1>
