@@ -5,7 +5,7 @@ import Link from 'next/link'
 import hero from '../images/landinghero.jpg'
 import { type } from 'os'
 import { useUser } from '@auth0/nextjs-auth0/client';
-import { trpc } from '../../utils/trpc';
+import { trpc } from '../utils/trpc';
 
 
 
@@ -18,7 +18,7 @@ export default function Home() {
 
 
   //Gives an example call
-  const AllEvents = () => {
+  const AllUsers = () => {
    try {
     const response = trpc.user.getAll.useQuery();
     const data = response.data
@@ -27,6 +27,8 @@ export default function Home() {
     console.log(error)
    }
   }
+
+  AllUsers()
   
 
 

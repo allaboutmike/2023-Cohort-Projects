@@ -1,6 +1,6 @@
 import { httpBatchLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
-import type { AppRouter } from '../../server/src/routers/_app.js';
+import type { AppRouter } from '../../../server/src/routers/_app.js';
 import dotenv from 'dotenv'
 
 dotenv.config();
