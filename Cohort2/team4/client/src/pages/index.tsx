@@ -17,7 +17,7 @@ export default function Home() {
 
 
 
-  //Gives an example call and populates a component on line 51
+  //Gives an example call
   const AllEvents = () => {
    try {
     const response = trpc.user.getAll.useQuery();
