@@ -11,7 +11,8 @@ const AboutUs = () => {
                 <img className="h-2/6 w-72 rounded-full border-black border-solid border-2" src={mike.src}></img>
                 <p className="text-3xl">Mike B. </p>
                 <p className="text-2xl italic">Team Lead </p>
-                <p className="text-xl mt-4 px-8">I am currently thrilled to be a part of Meta's talented team of engineers, where I contribute to shaping the future of technology. At Meta, I play an integral role in the development of innovative products and services that empower millions of users worldwide. Whether it's enhancing user experiences, optimizing performance, or implementing new features, I enjoy the challenges that come with working on the forefront of technology.</p>
+                <p className="text-xl mt-4 px-8">I am Mike and I am cool.</p>
+                {/* TBD Create an object with team info and push out bio fields */}
             </div>
         </section>
     </div>

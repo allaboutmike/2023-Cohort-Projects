@@ -16,18 +16,19 @@ export default function Home() {
   const { user, error, isLoading } = useUser();
 
 
-  const allEvents = async () => {
+
+  //Gives an example call and populates a component on line 51
+  const AllEvents = () => {
    try {
-    const response = trpc.event.byId.useQuery({input: 1});
-    console.log(response.data);
- 
+    const response = trpc.user.getAll.useQuery();
+    const data = response.data
+    console.log(data)
    } catch (error) {
-    console.error("Big oops. Try again." + error)
+    console.log(error)
    }
   }
   
 
-  allEvents();
 
   return (
     <main className="min-h-screen">
