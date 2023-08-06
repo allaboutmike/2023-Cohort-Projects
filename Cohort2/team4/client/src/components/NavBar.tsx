@@ -10,7 +10,7 @@ const NavBar = () => {
     const {user, isLoading, error} = useUser()
 
     return(
-        <div className="mb-6">
+        <div className="mb-32">
             <nav className="flex items-center justify-between flex-wrap">
                 <div className="flex items-center flex-shrink-0 text-white mr-8">
                     <Link href="/" className="flex flex-row items-center">

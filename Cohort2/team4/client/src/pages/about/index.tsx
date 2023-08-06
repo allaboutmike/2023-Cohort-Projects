@@ -36,7 +36,7 @@ const AboutUs = () => {
     ]
 
     return (
-        <div className="bg-white py-8">
+        <div className="h-screen py-8">
         <div className="container px-4 mx-auto">
             <div className="text-center w-2/3 my-0 mx-auto ">
             <h1 className="text-3xl font-semibold mb-4">About Convi</h1>
@@ -54,7 +54,7 @@ const AboutUs = () => {
                     <div className="flex justify-center flex-wrap">
                     {team.map((team) => {
                 return(
-                        <div key={team.name} className="bg-white rounded-lg shadow-lg p-4 mx-4 my-2 max-w-md w-40">
+                        <div key={team.name} className="border-solid border-2 border-grey-700 rounded-lg shadow-xl p-4 mx-4 my-2 max-w-md w-40">
                         <img
                             className="w-24 h-24 mx-auto mb-4 rounded-full"
                             src={team.image.src}
