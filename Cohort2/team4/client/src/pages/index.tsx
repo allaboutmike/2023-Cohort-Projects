@@ -22,13 +22,31 @@ export default function Home() {
    try {
     const response = trpc.user.getAll.useQuery();
     const data = response.data
-    console.log(data)
+    if(data){
+      console.log(data)
+      return
+    } console.log('Query not returned. :(')
    } catch (error) {
-    console.log(error)
+    console.error(error)
    }
   }
-
   AllUsers()
+
+  //Gives example call with args
+  const oneEvent = () => {
+    try {
+      const response = trpc.event.byId.useQuery("1")
+      const data = response.data
+      if(data){
+        console.log(data)
+        return
+      } console.log("Query not returned. :(")
+    } catch (error) {
+      console.error(error)
+    }
+  };
+
+  oneEvent()
   
 
 

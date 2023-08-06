@@ -20,13 +20,13 @@ const NavBar = () => {
                 </div>
                 <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                     <div className="text-sm lg:flex-grow">
-                        <a href="#" className="block mt-4 lg:inline-block lg:mt-0  text-black-200 font-medium hover:text-blue-800 mr-4">
+                        <a href="./about" className="block mt-4 lg:inline-block lg:mt-0  text-black-200 font-medium hover:text-blue-800 mr-4">
                             About Us
                         </a>
-                        <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-black-200 font-medium hover:text-blue-800 mr-4">
+                        <a href="./features" className="block mt-4 lg:inline-block lg:mt-0 text-black-200 font-medium hover:text-blue-800 mr-4">
                             Features
                         </a>
-                        <a href="#" className="block mt-4 lg:inline-block lg:mt-0  text-black-200 font-medium hover:text-blue-800 mr-4">
+                        <a href="./contact" className="block mt-4 lg:inline-block lg:mt-0  text-black-200 font-medium hover:text-blue-800 mr-4">
                             Contact
                         </a>
                         </div>
