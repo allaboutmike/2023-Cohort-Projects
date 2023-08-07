@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e:any) => {
@@ -24,7 +24,7 @@ const ContactForm = () => {
         <div className="text-center">
           <h1 className="text-3xl font-semibold mb-4">Contact Us</h1>
           <p className="text-gray-600">
-            Have questions or want to know more about Convi? Don't hesitate to reach out to us. We'd love to hear from you!
+            Have questions or want to know more about Convi? Do not hesitate to reach out to us. We would love to hear from you!
           </p>
         </div>
 
