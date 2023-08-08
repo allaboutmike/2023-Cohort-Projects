@@ -31,7 +31,6 @@ export default function EventDashboard() {
               Add New Event
             </button>
         </div>
-      </div>
     </main>
   );
 }
