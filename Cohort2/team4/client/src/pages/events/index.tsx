@@ -1,14 +1,27 @@
 import EventList from "../../components/EventList";
+import { WithPageAuthRequired, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function EventDashboard() {
-  const user = "Sally";
+
+  const {user} = useUser()
   const events = ["event1"];
+
+  console.log(user)
+
   return (
-    <main style={{ height: "100dvh" }}>
-      <div className="grid grid-row-1 gap-12 my-20 mx-auto w-3/5 h-2/3 ">
-        <div className="bg-[#f1f5f9] space-y-10 border-grey border-solid border-2 pl-20 pt-20 rounded-md">
-          <h1 className="font-bold text-2xl">Hello there, {user}</h1>
-          <div className="grid grid-cols-2">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div>
+        <header className="flex items-center gap-[70vw]">
+          Convi
+          <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">
+            Sign in
+          </button>
+        </header>
+      </div>
+      <div>
+        <div className="space-y-10">
+          <h1 className="font-bold text-2xl">Hello there, {user?.nickname}</h1>
           <p>See your upcoming events</p>
           </div>
           <div className="flex">
@@ -22,3 +35,5 @@ export default function EventDashboard() {
     </main>
   );
 }
+
+export const getServerSideProps = withPageAuthRequired();
