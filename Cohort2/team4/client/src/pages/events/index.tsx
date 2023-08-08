@@ -24,10 +24,18 @@ export default function EventDashboard() {
         <div className="space-y-10">
           <h1 className="font-bold text-2xl">Hello there, {user?.nickname}</h1>
           <p>See your upcoming events</p>
+
+          </div>
+          <div className="flex">
+            <a href="#"className="bg-[#f8fafc]"><EventList events={events} /></a>
+          </div>
+            <button className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-400 mt-10">
+              Add New Event
+            </button>
           <EventList events={events} />
           <EventModal />
+
         </div>
-      </div>
     </main>
   );
 }
