@@ -1,3 +1,4 @@
+import EventModal from "@/components/EventModal";
 import EventList from "../../components/EventList";
 
 export default function EventDashboard() {
@@ -18,9 +19,7 @@ export default function EventDashboard() {
           <h1 className="font-bold text-2xl">Hello there, {user}</h1>
           <p>See your upcoming events</p>
           <EventList events={events} />
-          <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec] m-10">
-            Add New Event
-          </button>
+          <EventModal />
         </div>
       </div>
     </main>
