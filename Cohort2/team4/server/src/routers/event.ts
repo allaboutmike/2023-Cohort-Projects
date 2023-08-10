@@ -5,14 +5,19 @@ import { z } from 'zod';
 import { randomUUID } from 'crypto';
 
 
-
-
 export const eventRouter = router({
   getAll: publicProcedure.query((req) => {
     return Events.findAll();
   }),
   byId: publicProcedure.input(z.string()).query(req =>{
     return Events.findByPk(req.input);
+  }),
+  byHost: publicProcedure.input(z.string()).query(req => {
+    return Events.findAll({
+      where: {
+        host: req.input
+      }
+    });
   }),
   byName: publicProcedure.input(z.string()).query(req => {
     return Events.findOne({
