@@ -7,7 +7,7 @@ dotenv.config();
 
 function getBaseUrl() {
   if(process.env.NODE_ENV === 'production'){
-    return 'https://team4-eventmanagementapi-production.up.railway.app/'
+    return 'https://team4-eventmanagementapi-production.up.railway.app'
   }
   return `http://localhost:5000`;
 }
